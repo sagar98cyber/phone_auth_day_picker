@@ -1,4 +1,5 @@
 import 'package:basic_ui/global.dart';
+import 'package:basic_ui/play.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_time_picker_spinner/flutter_time_picker_spinner.dart';
 import 'package:day_picker/day_picker.dart';
@@ -60,6 +61,10 @@ class _weekPickrState extends State<weekPickr> {
                         color: Colors.grey,
                       ),
                       onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => play()),
+                        );
                         /*data.room(row['rid']);
                         data.room.remove([row['rname']]);
                         print(data.room);
@@ -75,6 +80,10 @@ class _weekPickrState extends State<weekPickr> {
                         color: Colors.grey,
                       ),
                       onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => delet()),
+                        );
                         //data.room(row['rid']);
                         data.room.remove([row['rname']]);
                         print(data.room);
