@@ -71,6 +71,7 @@ class _weekPickrState extends State<weekPickr> {
                     GestureDetector(
                       child: Icon(
                         Icons.delete,
+                        size: 40,
                         color: Colors.grey,
                       ),
                       onTap: () {
