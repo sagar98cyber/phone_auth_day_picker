@@ -13,7 +13,7 @@ class weekPickr extends StatefulWidget {
 class _weekPickrState extends State<weekPickr> {
 /*  bool startTimeSelected = false;
   bool endTimeSelected = false;
- 
+
   TimeOfDay picked;
   String finl;
  TimeOfDay _time = TimeOfDay.now();
@@ -39,60 +39,87 @@ class _weekPickrState extends State<weekPickr> {
       children.add(Card(
         elevation: 5.0,
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.symmetric(horizontal:8.0),
           child: ListTile(
-            title: Column(
-              children: [
-                Text(row['rrepeat']),
-                Text(row['rtime']),
-                Text(row['rdescription']),
-                Text(row['rname']),
-              ],
+            title: Container(
+              child: Column(
+                children: [
+                  Text(row['rrepeat']),
+                  Text(row['rtime']),
+                  Text(row['rdescription']),
+                  Text(row['rname']),
+                ],
+              ),
             ),
             trailing: Padding(
               padding: const EdgeInsets.only(bottom:8.0),
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    GestureDetector(
-                      child: Icon(
-                        Icons.play_arrow_rounded,
-                        size: 50,
-                        color: Colors.grey,
+              child: Container(
+                //height: MediaQuery,
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      GestureDetector(
+                        child: Icon(
+                          Icons.play_arrow_rounded,
+                          size: 50,
+                          color: data.start,
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => play()),
+                          );
+                          /*data.room(row['rid']);
+                          data.room.remove([row['rname']]);
+                          print(data.room);
+                          setState(() {});
+                          queryall();
+                          _delete(context, noteList[position]);*/
+                        },
                       ),
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => play()),
-                        );
-                        /*data.room(row['rid']);
-                        data.room.remove([row['rname']]);
-                        print(data.room);
-                        setState(() {});
-                        queryall();
-                        _delete(context, noteList[position]);*/
-                      },
-                    ),
-                    GestureDetector(
-                      child: Icon(
-                        Icons.delete,
-                        size: 40,
-                        color: Colors.grey,
+                      GestureDetector(
+                        child: Icon(
+                          Icons.ac_unit,
+                          size: 40,
+                          color: data.start,
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => play()),
+                          );
+                          /*data.room(row['rid']);
+                          data.room.remove([row['rname']]);
+                          print(data.room);
+                          setState(() {});
+                          queryall();
+                          _delete(context, noteList[position]);*/
+                        },
                       ),
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => delet()),
-                        );
-                        //data.room(row['rid']);
-                        data.room.remove([row['rname']]);
-                        print(data.room);
-                        setState(() {});
-                        //queryall();
-                        //_delete(context, noteList[position]);
-                      },
-                    ),
-                  ],
+                      Padding(
+                        padding: const EdgeInsets.only(bottom:8.0),
+                        child: GestureDetector(
+                          child: Icon(
+                            Icons.delete,
+                            size: 40,
+                            color: data.end,
+                          ),
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => delet()),
+                            );
+                            //data.room(row['rid']);
+                            data.room.remove([row['rname']]);
+                            print(data.room);
+                            setState(() {});
+                            //queryall();
+                            //_delete(context, noteList[position]);
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

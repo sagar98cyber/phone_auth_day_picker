@@ -70,7 +70,9 @@ class _FormScreenState extends State<FormScreen> {
                         borderRadius: BorderRadius.circular(30.0),
                         gradient: LinearGradient(
                           begin: Alignment.topLeft,
+
                           colors: [
+
                             data.start,
                             data.end
                           ],
@@ -107,6 +109,7 @@ class _FormScreenState extends State<FormScreen> {
                       _dateTime.second.toString().padLeft(2, '0')*/
                                 ,
                                 style: TextStyle(
+                                  color: data.pur,
                                     fontSize: 24, fontWeight: FontWeight.bold),
                               ),
                             ),
@@ -225,7 +228,6 @@ class _FormScreenState extends State<FormScreen> {
                         data.room.add({
                           "rname":"$_rname",
                           "rrepeat":"$finl",
-
                           "rdescription":"$_rdesc",
                           "rtime":"$s",
                           "duration":"$_rtimehr",
@@ -304,7 +306,7 @@ class _FormScreenState extends State<FormScreen> {
   }
   Widget _buildDescField() {
     return TextFormField(
-      decoration: InputDecoration(labelText: 'Name'),
+      decoration: InputDecoration(labelText: 'Desc'),
       keyboardType: TextInputType.text,
       onSaved: (String value) {
         _rdesc = value;
